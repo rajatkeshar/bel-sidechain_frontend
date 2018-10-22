@@ -1,0 +1,379 @@
+<html>
+
+<head>
+    <title>Sidechain</title>
+    <style>
+        .ul_font_size {
+            font-size: 25px;
+            text-align: center;
+        }
+        .row-class {
+            margin-bottom: 5px;
+            margin-top: 20px;
+            background: white;
+            height: 45px;
+            padding-top: 10px
+        }
+        .th-style {
+            font-size: 22px;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+        }
+        .panel.panel-info {
+            position: relative;
+            top: 90px;
+        }
+        .send-btn {
+            margin-bottom: 10px !important;
+            margin-right: 13px;
+        }
+        .send-btn-div {
+            text-align: right;
+            margin-top: 10;
+        }
+		.d-inline{
+			text-align: right;
+		}
+
+		p{
+			position: relative;
+			bottom: 48px;
+		}
+        input#login-submit{
+            background: 195399;
+			position: relative;
+			top: 80px;
+			width: 96px;
+			left: 70px;
+		}
+		input#passphrase{
+		    position: relative;
+			top: 40px;
+		}
+		.panel.panel-login{
+			position: relative;
+			right: 50px;
+			top: 65px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<style>
+		body {
+			background-color: #74B4E1;
+		}
+	</style>
+
+	<div class="main">
+		<div class="container" style="padding-top: 300px;">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-sm-offset-3">
+                                                <button button type="button" class="btn btn-primary register" tabindex="5" value="Register" data-toggle="modal" data-target="#registerDappModalCenter">Register New DAPP</button>
+												<button button type="button" class="btn btn-primary install" tabindex="5" value="Install" style="display:none;" data-toggle="modal" data-target="#installDappModalCenter">Install DAPP</button>
+												<button button type="button" class="btn btn-primary launch" tabindex="5" value="launch" style="display:none;" data-toggle="modal" data-target="#launchDappModalCenter">Launch DAPP</button>
+												<button button type="button" class="btn btn-primary login" tabindex="5" value="Log In" data-toggle="modal" data-target="#getDappsModelController">Log In</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+	<div class="modal fade" id="getDappsModelController" tabindex="10" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <h5 class="modal-title" id="exampleModalLongTitle">DApps</h5>
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      <span aria-hidden="true">&times;</span>
+		    </button>
+		  </div>
+		  <div class="modal-body">
+		    <div class="send-form">
+	            <table class="table table-striped" id="dappTable">
+                    <tr>
+                        <th class=".th-style">Id</th>
+                        <th class=".th-style">Name</th>
+                        <th class=".th-style">category</th>
+                    </tr>
+                </table>
+		    </div>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div> 
+	  </div>
+	</div>
+
+	<div class="modal fade" id="registerDappModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <h5 class="modal-title" id="exampleModalLongTitle">Register New Dapp</h5>
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      <span aria-hidden="true">&times;</span>
+		    </button>
+		  </div>
+		  <div class="modal-body">
+		    <div class="send-form">
+		            <form >
+		                <div class="form-group">
+		                    <label for="secret">Secret:</label>
+		                    <input id="secret" type="text" class="form-control">
+		                </div>
+						<div class="form-group">
+		                    <label for="countryCode">Country code:</label>
+		                    <input id="countryCode" type="text" class="form-control">
+		                </div>
+						<div class="form-group">
+		                    <label for="category">Category:</label>
+		                    <select class="form-control" id="category">
+								<option value="1">Common</option>
+								<option value="2">Education</option>
+								<option value="3">Business</option>
+							</select>
+		                </div>
+		                <div class="form-group">
+		                    <label for="Name">Name:</label>
+		                    <input id="name" type="text" class="form-control">
+		                </div>
+						<div class="form-group">
+		                    <label for="Description">Description:</label>
+		                    <input id="description" type="text" class="form-control">
+		                </div>
+						<div class="form-group">
+		                    <label for="Link">Link:</label>
+		                    <input id="link" type="text" class="form-control">
+		                </div>
+						<div class="form-group">
+		                    <label for="Icon">Icon:</label>
+		                    <input id="icon" type="text" class="form-control">
+		                </div>
+		            </form>
+		        </div>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    <button type="button" class="btn btn-primary register-token-btn">Register</button>
+		  </div>
+		</div> 
+	  </div>
+	</div>
+
+	<div class="modal fade" id="installDappModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <h5 class="modal-title" id="exampleModalLongTitle">Register New Dapp</h5>
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      <span aria-hidden="true">&times;</span>
+		    </button>
+		  </div>
+		  <div class="modal-body">
+		    <div class="send-form">
+		            <form >
+						<div class="form-group">
+		                    <label for="dappId">dappId:</label>
+		                    <label id="setDappId"></label>
+		                </div>
+		                <div class="form-group">
+		                    <label for="Master Password">Master Password:</label>
+		                    <input id="masterPassword" type="text" class="form-control">
+		                </div>
+		            </form>
+		        </div>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    <button type="button" class="btn btn-primary install-token-btn">Install</button>
+		  </div>
+		</div> 
+	  </div>
+	</div>
+
+	<div class="modal fade" id="launchDappModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <h5 class="modal-title" id="exampleModalLongTitle">Register New Dapp</h5>
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      <span aria-hidden="true">&times;</span>
+		    </button>
+		  </div>
+		  <div class="modal-body">
+		    <div class="send-form">
+		            <form >
+						<div class="form-group">
+		                    <label for="dappId">dappId:</label>
+		                    <label id="setDappId"></label>
+		                </div>
+		                <div class="form-group">
+		                    <label for="Master Password">Master Password:</label>
+		                    <input id="masterPassword" type="text" class="form-control">
+		                </div>
+		            </form>
+		        </div>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    <button type="button" class="btn btn-primary launch-token-btn">Launch</button>
+		  </div>
+		</div> 
+	  </div>
+	</div>
+
+    <script>
+        $(document).ready(function() {
+			var dappId = '';
+			var base_url = 'http://localhost:9305';
+
+    		$('.login').click(function() {
+				$.ajax({
+                    type: 'GET',
+                    url: base_url + '/api/dapps',
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.success) {
+                            var $table = $('#dappTable');
+							for (var i in res.dapps) {
+								var dapp = res.dapps[i];
+								var tr = '<tr><td><a href="http://localhost:8080/api/dapps/'+dapp.transactionId+'">' + dapp.transactionId + '</a></td><td>' + dapp.name + '</td><td>' + dapp.category + '</td></tr>';
+								$table.append(tr);
+							}
+                        } else {
+							return alert(JSON.stringify(ret));
+						}
+                    }
+                });	
+			});
+
+			$('.register-token-btn').click(function() {
+				console.log("calling register");
+				var secret = $('#secret').val();
+				var countryCode = $('#countryCode').val();
+				var category = $('#category').val();
+				var name = $('#name').val();
+				var description = $('#description').val();
+				var link = $('#link').val();
+				var icon = $('#icon').val();
+				var type = 0;
+				var delegates = [
+      				"db18d5799944030f76b6ce0879b1ca4b0c2c1cee51f53ce9b43f78259950c2fd",
+					"590e28d2964b0aa4d7c7b98faee4676d467606c6761f7f41f99c52bb4813b5e4",
+					"bfe511158d674c3a1e21111223a49770bee93611d998e88a5d2ea3145de2b68b",
+					"7bbf62931cf3c596591a580212631aff51d6bc0577c54769953caadb23f6ab00",
+					"452df9213aedb3b9fed6db3e2ea9f49d3db226e2dac01828bc3dcd73b7a953b4"
+				]
+				var unlockDelegates = 3;	
+				var payload = {
+					'secret': secret,
+					'category': category,
+					'name': name,
+					'description': description,
+					'type': type,
+					'link': link,
+					'icon': icon,
+					'delegates': delegates,
+					'unlockDelegates': unlockDelegates,
+					'countryCode': countryCode 
+				}
+				console.log('Register DAPP Payload: ', payload);
+			    $.ajax({
+                	type: 'PUT',
+                	url: base_url + '/api/dapps',
+                	data: payload,
+                	dataType: 'json',
+                	success: function(res) {
+						
+                    	if (res.success) {
+							$('.install').show();	
+							$('#registerDappModalCenter').modal('hide');
+							dappId = res.transaction.id;
+							$('#installDappModalCenter #setDappId').text(dappId);
+							$('#launchDappModalCenter #setDappId').text(dappId);
+							return alert(JSON.stringify(res));
+						} else {
+							return alert(JSON.stringify(res));
+						}
+					}
+				});	
+			});
+			
+			$('.install-token-btn').click(function() {
+				$('#setDappId').text(dappId);
+				var master = $('#masterPassword').val();
+
+				var payload = {
+					id: dappId,
+					master: master
+				};
+				
+				$.ajax({
+                	type: 'POST',
+                	url: base_url + '/api/dapps/install',
+                	data: payload,
+                	dataType: 'json',
+                	success: function(res) {
+                    	if (res.success) {	
+							$('#installDappModalCenter').modal('hide');
+							$('.launch').show();
+							return alert(JSON.stringify(res));
+						} else {
+							return alert(JSON.stringify(res));
+						}
+					}
+				});	
+			});
+
+			$('.launch-token-btn').click(function() {
+				$('#setDappId').text(dappId);
+				var master = $('#masterPassword').val();
+
+				var payload = {
+					id: dappId,
+					master: master
+				};
+				
+				$.ajax({
+                	type: 'POST',
+                	url: base_url + '/api/dapps/launch',
+                	data: payload,
+                	dataType: 'json',
+                	success: function(res) {
+                    	if (res.success) {	
+							$('#launchDappModalCenter').modal('hide');
+							$('.launch').hide();
+							$('.install').hide();
+							return alert(JSON.stringify(res));
+						} else {
+							return alert(JSON.stringify(res));
+						}
+					}
+				});	
+			});
+		});
+    </script>
+</body>
+
+</html>
+
